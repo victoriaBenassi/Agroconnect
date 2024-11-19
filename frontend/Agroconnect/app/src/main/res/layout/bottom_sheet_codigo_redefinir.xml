@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/arredondamento_background"
+    android:backgroundTint="@color/caixa_texto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- titulo -->
+    <TextView
+        android:id="@+id/txtTituloVerificacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Verificação"
+        android:textColor="@color/edit_texto"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"/>
+
+    <TextView
+        android:id="@+id/txtSubtituloVerificacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Digite o código de verificação"
+        android:textColor="@color/edit_texto_hint"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="20dp" />
+
+    <!-- Caixa de input do código -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <!-- Campo de código 1 -->
+        <EditText
+            android:id="@+id/editDigito1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textColor="@color/edit_texto"
+            android:textSize="18sp"
+            android:background="@drawable/container_componentes"
+            android:backgroundTint="@color/fundo_cinza_claro"/>
+
+        <!-- Campo de código 2 -->
+        <EditText
+            android:id="@+id/editDigito2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textColor="@color/edit_texto"
+            android:textSize="18sp"
+            android:background="@drawable/container_componentes"
+            android:backgroundTint="@color/fundo_cinza_claro"
+            android:layout_marginStart="10dp"/>
+
+        <!-- Campo de código 3 -->
+        <EditText
+            android:id="@+id/editDigito3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textColor="@color/edit_texto"
+            android:textSize="18sp"
+            android:background="@drawable/container_componentes"
+            android:backgroundTint="@color/fundo_cinza_claro"
+            android:layout_marginStart="10dp"/>
+
+        <!-- Campo de código 4 -->
+        <EditText
+            android:id="@+id/editDigito4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textColor="@color/edit_texto"
+            android:textSize="18sp"
+            android:background="@drawable/container_componentes"
+            android:backgroundTint="@color/fundo_cinza_claro"
+            android:layout_marginStart="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+            <TextView
+                android:id="@+id/txtNãoRecebeuCodigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não recebeu o código?"
+                android:textSize="16dp"
+                android:textColor="@color/edit_texto_hint"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <TextView
+                android:id="@+id/txtReenviarCodigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reenviar"
+                android:textSize="16dp"
+                android:textColor="@color/verde_claro"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginStart="5dp"/>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonVerificarCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="verificar"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
+        android:background="@drawable/container_componentes"
+        app:backgroundTint="@color/verde_claro"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"/>
+
+</LinearLayout>

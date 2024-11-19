@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.constate.agroconnect.ui.fragments.navegacao.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/carrinhoFragment"
+        android:name="com.constate.agroconnect.ui.CarrinhoFragment"
+        tools:layout="@layout/fragment_carrinho" />
+
+    <fragment
+        android:id="@+id/resumoPedidoFragment"
+        android:name="com.constate.agroconnect.ui.ResumoPedidoFragment"
+        tools:layout="@layout/fragment_resumo_pedido" />
+
+    <fragment
+        android:id="@+id/nav_pedidos"
+        android:name="com.constate.agroconnect.ui.fragments.navegacao.PedidosFragment"
+        android:label="fragment_pedidos"
+        tools:layout="@layout/fragment_pedidos" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.constate.agroconnect.ui.fragments.navegacao.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/dadosContaFragment"
+        android:name="com.constate.agroconnect.ui.DadosContaFragment"
+        android:label="fragment_dados_conta"
+        tools:layout="@layout/fragment_dados_conta" />
+
+    <fragment
+        android:id="@+id/enderecoFragment"
+        android:name="com.constate.agroconnect.ui.EnderecoFragment"
+        android:label="fragment_endereco"
+        tools:layout="@layout/fragment_endereco" />
+
+    <fragment
+        android:id="@+id/adicionarEnderecoFragment"
+        android:name="com.constate.agroconnect.ui.AdicionarEnderecoFragment"
+        android:label="fragment_adicionar_endereco"
+        tools:layout="@layout/fragment_adicionar_endereco" />
+
+</navigation>

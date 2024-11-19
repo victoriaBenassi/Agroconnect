@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/caixa_texto"
+    tools:context=".ui.CarrinhoFragment">
+
+    <!-- cabecalho -->
+    <RelativeLayout
+        android:id="@+id/cabecalhoTelaCarrinho"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/verde_escuro"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- cabecalho -->
+
+        <ImageView
+            android:id="@+id/iconHome"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_carrinho"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/txtHomeCabecalho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@id/iconHome"
+            android:text="Carrinho"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iconMais"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/circulo_shape"
+            android:backgroundTint="@color/verde_claro"
+            android:src="@drawable/ic_mais"
+            app:tint="#FFFFFF" />
+    </RelativeLayout>
+
+    <!-- Produtos no carrinho -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCarrinho"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/viewInformacoesCarrinho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cabecalhoTelaCarrinho"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <!-- nenhum produto no carrinho -->
+    <TextView
+        android:id="@+id/txtNenhumProdutoCarrinho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Ainda não há produtos\n     no seu carrinho"
+        android:textColor="@color/edit_texto"
+        android:textSize="14sp"
+        android:drawableTop="@drawable/ic_carrinho"
+        android:drawableTint="@color/edit_texto"
+        android:drawablePadding="7dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cabecalhoTelaCarrinho"
+        app:layout_constraintVertical_bias="0.397" />
+
+
+
+    <!-- Concluir Pedido -->
+    <View
+        android:id="@+id/viewInformacoesCarrinho"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/container_componentes"
+        android:backgroundTint="@color/fundo_cinza_claro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtValorTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Valor total"
+        android:textColor="@color/edit_texto"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintStart_toStartOf="@+id/viewInformacoesCarrinho"
+        app:layout_constraintTop_toTopOf="@+id/viewInformacoesCarrinho" />
+
+    <TextView
+        android:id="@+id/txtValorTotalPreco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:text="R$ 0,00"
+        android:textColor="@color/edit_texto"
+        android:textSize="22dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintBottom_toBottomOf="@+id/viewInformacoesCarrinho"
+        app:layout_constraintStart_toStartOf="@+id/viewInformacoesCarrinho"
+        app:layout_constraintTop_toBottomOf="@+id/txtValorTotal" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonContinuar"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:text="Continuar"
+        android:textColor="@color/white"
+        android:background="@drawable/container_componentes"
+        android:backgroundTint="@color/verde_claro"
+        app:layout_constraintBottom_toBottomOf="@+id/viewInformacoesCarrinho"
+        app:layout_constraintEnd_toEndOf="@+id/viewInformacoesCarrinho"
+        app:layout_constraintTop_toTopOf="@+id/viewInformacoesCarrinho" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

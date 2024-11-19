@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.DadosContaFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fundo_cinza_claro"
+        tools:context=".ui.DadosContaFragment">
+
+
+        <!-- Nome -->
+        <LinearLayout
+            android:id="@+id/cabecalhoDadosConta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/arredondamento_background_perfil"
+            android:backgroundTint="#805AAF3F"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/verde_claro"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/buttonVoltarPerfil"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="botão para voltar ao menu"
+                    android:src="@drawable/ic_voltar" />
+
+                <TextView
+                    android:id="@+id/txtMeuPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="60dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Meu perfil"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtAtualizarDados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Atualizar dados"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Campo para nome -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputNomePerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:hintAnimationEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cabecalhoDadosConta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cabecalhoDadosConta">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editNomePerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome"
+                android:textColor="@color/edit_texto"
+                android:textColorHint="@color/edit_texto_hint"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="textPersonName"
+                android:background="@drawable/container_componentes" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo para sobrenome -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputSobrenomePerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:hintAnimationEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/inputNomePerfil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputNomePerfil">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editSobrenomePerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Sobrenome"
+                android:textColor="@color/edit_texto"
+                android:textColorHint="@color/edit_texto_hint"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="textPersonName"
+                android:background="@drawable/container_componentes"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo para email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputEmailPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:hintAnimationEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/inputSobrenomePerfil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputSobrenomePerfil">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editEmailPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E-mail"
+                android:textColor="@color/edit_texto"
+                android:textColorHint="@color/edit_texto_hint"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/container_componentes"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSalvarAlteracao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/container_componentes"
+            android:text="Salvar alterações"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_medium"
+            app:backgroundTint="@color/verde_claro"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputEmailPerfil" />
+
+        <TextView
+            android:id="@+id/txtExcluirConta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_cancelar"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/vermelho"
+            android:text="Excluir minha conta"
+            android:textAlignment="textEnd"
+            android:textColor="@color/vermelho"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSalvarAlteracao" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>

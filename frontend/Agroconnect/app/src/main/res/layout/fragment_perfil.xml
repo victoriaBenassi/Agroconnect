@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo_cinza_claro"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.navegacao.PerfilFragment">
+
+    <!-- cabecalho -->
+    <RelativeLayout
+        android:id="@+id/cabecalhoTelaPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/verde_escuro"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- cabecalho -->
+        <ImageView
+            android:id="@+id/iconPerfil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_perfil"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/txtPerfilCabecalho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/iconPerfil"
+            android:layout_marginStart="20dp"
+            android:text="Perfil"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="20dp">
+
+        <TextView
+            android:id="@+id/txtNomeUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:textColor="@color/edit_texto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <TextView
+            android:id="@+id/txtEmailUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email"
+            android:textColor="@color/edit_texto"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/divisoria1"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/caixa_texto"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"/>
+
+    <!-- configuracoes -->
+    <TextView
+        android:id="@+id/txtDadosConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dados da conta"
+        android:textColor="@color/edit_texto"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:drawableStart="@drawable/ic_perfil"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/edit_texto"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <TextView
+        android:id="@+id/txtMeusEnderecos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meus endereços"
+        android:textColor="@color/edit_texto"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:drawableStart="@drawable/localizacao"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/edit_texto"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="20dp"/>
+
+
+    <View
+        android:id="@+id/divisoria2"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/caixa_texto"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/swReceberNotificacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Receber Notificações"
+        android:textColor="@color/edit_texto"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:drawableStart="@drawable/ic_notificacao"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/edit_texto"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/swModoDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:drawableStart="@drawable/ic_dark"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/edit_texto"
+        android:text="Modo dark"
+        android:textColor="@color/edit_texto"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/botao_borda_vermelha"
+        android:text="Sair"
+        android:textColor="@color/vermelho"
+        android:fontFamily="@font/poppins_medium"
+        android:textStyle="bold"
+        app:backgroundTint="@color/vermelho"/>
+</LinearLayout>

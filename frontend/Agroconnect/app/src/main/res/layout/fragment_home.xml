@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/caixa_texto"
+    tools:context=".ui.fragments.navegacao.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/caixa_texto">
+
+        <!-- Conteúdo principal da tela -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/caixa_texto"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Cabeçalho -->
+            <RelativeLayout
+                android:id="@+id/cabecalhoTelaHome"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/verde_escuro">
+
+                <ImageView
+                    android:id="@+id/iconHome"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_home"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/txtHomeCabecalho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="23dp"
+                    android:layout_toEndOf="@id/iconHome"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Produtos"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonCarrinho"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/circulo_shape"
+                    android:backgroundTint="@color/verde_claro"
+                    android:contentDescription="botao para acessar carrinho"
+                    android:src="@drawable/ic_carrinho"
+                    app:tint="#FFFFFF" />
+            </RelativeLayout>
+
+            <!-- SearchView -->
+            <SearchView
+                android:id="@+id/searchViewPesquisa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/container_componentes"
+                android:backgroundTint="@color/fundo_cinza_claro"
+                android:iconifiedByDefault="true"
+                android:queryHint="Pesquise aqui" />
+
+            <!-- Categorias -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Botões de categoria -->
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonCategoriaTodos"
+                            android:layout_width="100dp"
+                            android:layout_height="70dp"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/container_componentes"
+                            android:backgroundTint="@color/verde_claro"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Todos"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonCategoriaLegumes"
+                            android:layout_width="100dp"
+                            android:layout_height="70dp"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/container_componentes"
+                            android:backgroundTint="@color/vermelho"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Legumes"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonCategoriaFrutas"
+                            android:layout_width="100dp"
+                            android:layout_height="70dp"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/container_componentes"
+                            android:backgroundTint="@color/azul"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Frutas"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonCategoriaVerduras"
+                            android:layout_width="100dp"
+                            android:layout_height="70dp"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/container_componentes"
+                            android:backgroundTint="@color/amarelo"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Verduras"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtListaProdutos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:text="Todos"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewProdutos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+        <!-- FAB -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabTopo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/fundo_cinza_claro"
+            android:contentDescription="voltar ao topo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_topo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

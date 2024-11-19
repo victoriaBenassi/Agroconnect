@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Agroconnect</string>
+    <string name="acessar">Acessar</string>
+    <string name="senha">Senha</string>
+    <string name="e_mail">E-mail</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="logo">Logo</string>
+    <string name="criar_conta">Criar Conta</string>
+    <string name="confirma_o_de_senha">Confirmação de senha</string>
+    <string name="j_possui_uma_conta">Já possui uma conta?</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="nome_da_empresa">Nome da empresa</string>
+    <string name="fazenda_digital">Fazenda Digital</string>
+    <string name="acesse_sua">Acesse sua</string>
+    <string name="entrar">Entrar</string>
+    <string name="n_o_possui_conta">Não possui conta?</string>
+    <string name="criar">Criar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- tela dashboard -->
+    <string name="minha_fazenda">Minha Fazenda</string>
+    <string name="pendentes">Pendentes</string>
+    <string name="em_produ_o">Em produção</string>
+    <string name="concluidos">Concluidos</string>
+    <string name="lista_pendentes">Lista pedidos pendentes</string>
+    <string name="lista_pedidos_em_producao">lista pedidos em producao</string>
+    <string name="pedidos_concluidos">pedidos concluidos</string>
+    <string name="adicionar_produto">adicionar produto</string>
+    <string name="pedidos_em_produ_o">Pedidos Em Produção</string>
+    <string name="pedidos_pendentes">Pedidos Pendentes</string>
+</resources>

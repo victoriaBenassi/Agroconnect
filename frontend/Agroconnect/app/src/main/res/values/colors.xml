@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fundo_cinza_claro">#E7F0EB</color>
+    <color name="fundo_branco">#FFFFFFFF</color>
+    <color name="caixa_texto">#FFFFFFFF</color>
+    <color name="nav_icon">#7A7878</color>
+    <color name="edit_texto">#FF000000</color>
+    <color name="edit_texto_hint">#7A7878</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="verde_claro">#5AAF3F</color>
+    <color name="verde_escuro">#143C25</color>
+    <color name="cinza_claro">#E7F0EB</color>
+    <color name="cinza_escuro">#7A7878</color>
+    <color name="vermelho">#D92727</color>
+    <color name="azul">#3357D9</color>
+    <color name="amarelo">#FFEB3B</color>
+</resources>

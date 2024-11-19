@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo_cinza_claro"
+    tools:context=".ui.LoginActivity">
+
+    <!-- Logo -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+
+        <View
+            android:layout_width="270dp"
+            android:layout_height="270dp"
+            android:layout_marginStart="-40dp"
+            android:layout_marginTop="-110dp"
+            android:background="@drawable/circulo_shape"
+            android:backgroundTint="#905AAF3F" />
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-90dp"
+            android:layout_marginEnd="-50dp"
+            android:background="@drawable/circulo_shape"
+            android:backgroundTint="#90143C25" />
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/logo_branca" />
+    </RelativeLayout>
+
+    <!-- Titulo Acesse sua -->
+    <TextView
+        android:id="@+id/txtTitulo1Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/acesse_sua"
+        android:textColor="@color/edit_texto"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <!-- Titulo Fazenda Digital -->
+    <TextView
+        android:id="@+id/txtTitulo2Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fazenda_digital"
+        android:textColor="@color/verde_claro"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toEndOf="@+id/txtTitulo1Login"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <!-- Campo para email -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputEmailLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo1Login">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEmailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail"
+            android:textColor="@color/edit_texto"
+            android:textColorHint="@color/edit_texto_hint"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/container_componentes"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo para senha -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputSenhaLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:endIconMode="password_toggle"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmailLogin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editSenhaLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Senha"
+            android:textColor="@color/edit_texto"
+            android:textColorHint="@color/edit_texto_hint"
+            android:inputType="textPassword"
+            android:background="@drawable/container_componentes"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+    <!-- Esqueci minha senha -->
+    <TextView
+        android:id="@+id/forgotPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/esqueci_minha_senha"
+        android:textColor="@color/edit_texto_hint"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputSenhaLogin" />
+
+    <!--      Botão de login  -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/forgotPasswordTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80sp"
+        android:text="Acessar"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/poppins_medium"
+        android:background="@drawable/container_componentes"
+        android:layout_marginHorizontal="20dp"
+        app:backgroundTint="@color/verde_claro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputSenhaLogin" />
+
+    <!-- texto nao possui conta -->
+    <TextView
+        android:id="@+id/txtNaoPossuiConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/n_o_possui_conta"
+        android:textColor="@color/edit_texto_hint"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="10sp"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+    <!-- texto nao possui conta -->
+    <TextView
+        android:id="@+id/txtCriarConta"
+        android:layout_width="48sp"
+        android:layout_height="48sp"
+        android:onClick="cadastrar"
+        android:text="@string/criar"
+        android:textColor="@color/verde_claro"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="10sp"
+        app:layout_constraintVertical_bias=".8"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtNaoPossuiConta"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

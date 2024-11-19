@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/caixa_texto">
+
+        <TextView
+            android:id="@+id/txtLogradouro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Logradouro"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/edit_texto"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtVirgula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=","
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@+id/txtLogradouro"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtNumero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/txtVirgula"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtBairro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="bairro"
+            android:textSize="16dp"
+            android:textColor="@color/edit_texto"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLogradouro" />
+
+        <TextView
+            android:id="@+id/txtLocalidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Localidade"
+            android:textSize="16dp"
+            android:textColor="@color/edit_texto"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
+
+        <TextView
+            android:id="@+id/txtUf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="uf"
+            android:textSize="16dp"
+            android:textColor="@color/edit_texto"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toEndOf="@+id/txtLocalidade"
+            app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
+
+        <TextView
+            android:id="@+id/txtCep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="cep"
+            android:textSize="16dp"
+            android:textColor="@color/edit_texto"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLocalidade" />
+
+        <TextView
+            android:id="@+id/txtComplemento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCep" />
+
+        <ImageButton
+            android:id="@+id/buttonExcluirEndereco"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="botão para apagar endereco"
+            android:src="@drawable/ic_lixo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/verde_claro" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
