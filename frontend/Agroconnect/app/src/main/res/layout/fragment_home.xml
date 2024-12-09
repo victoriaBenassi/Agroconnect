@@ -102,7 +102,7 @@
                         android:orientation="horizontal">
 
                         <!-- Botões de categoria -->
-                        <androidx.appcompat.widget.AppCompatButton
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/buttonCategoriaTodos"
                             android:layout_width="100dp"
                             android:layout_height="70dp"
@@ -110,11 +110,11 @@
                             android:layout_marginTop="15dp"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/container_componentes"
-                            android:backgroundTint="@color/verde_claro"
+                            android:backgroundTint="#955AAF3F"
                             android:fontFamily="@font/poppins_medium"
                             android:text="Todos"
                             android:textColor="@color/white"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"/>
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/buttonCategoriaLegumes"
@@ -124,7 +124,7 @@
                             android:layout_marginTop="15dp"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/container_componentes"
-                            android:backgroundTint="@color/vermelho"
+                            android:backgroundTint="#FFD32C"
                             android:fontFamily="@font/poppins_medium"
                             android:text="Legumes"
                             android:textColor="@color/white"
@@ -138,7 +138,7 @@
                             android:layout_marginTop="15dp"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/container_componentes"
-                            android:backgroundTint="@color/azul"
+                            android:backgroundTint="#FE91A4"
                             android:fontFamily="@font/poppins_medium"
                             android:text="Frutas"
                             android:textColor="@color/white"
@@ -152,7 +152,7 @@
                             android:layout_marginTop="15dp"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/container_componentes"
-                            android:backgroundTint="@color/amarelo"
+                            android:backgroundTint="#F28930"
                             android:fontFamily="@font/poppins_medium"
                             android:text="Verduras"
                             android:textColor="@color/white"

@@ -167,6 +167,7 @@ public class ResumoPedidoFragment extends Fragment {
         });
 
         sheetBinding.buttonFinalizarRevisaoPedido.setOnClickListener(v -> {
+            Carrinho.getInstance().limparCarrinho();
             dialog.dismiss();
             criarPedido();
             NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
