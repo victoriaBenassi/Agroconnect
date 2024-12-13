@@ -1,0 +1,16 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado pressionado (clicado) -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#805AAF3F" /> <!-- Cor quando clicado -->
+            <corners android:radius="15dp" /> <!-- Bordas arredondadas -->
+        </shape>
+    </item>
+    <!-- Estado normal -->
+    <item>
+        <shape>
+            <solid android:color="#5AAF3F" /> <!-- Cor padrão -->
+            <corners android:radius="15dp" />
+        </shape>
+    </item>
+</selector>
