@@ -2,6 +2,8 @@ package com.constate.agroconnect.ui.fragments.navegacao;
 
 import android.graphics.Color;
 import android.os.Bundle;
+
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -40,7 +42,6 @@ public class HomeFragment extends Fragment {
         recyclerViewProdutos.setHasFixedSize(true);
 
         produtoAdapter = new ProdutoAdapter(listaProduto, getContext());
-        binding.txtListaProdutos.setBackgroundColor(Color.parseColor("#5AAF3F"));
         recyclerViewProdutos.setAdapter(produtoAdapter);
         binding.recyclerViewProdutos.setVisibility(View.VISIBLE);
 
@@ -56,42 +57,76 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    private void configurarCategorias() {
+    private void buttonTodos(){
         binding.buttonCategoriaTodos.setOnClickListener(v -> {
+            resetarCategorias();
             listaProduto.clear();
             listaProduto.addAll(Produtos.getTodos());
             produtoAdapter.notifyDataSetChanged();
-            binding.txtListaProdutos.setText("Todos");
-            binding.txtListaProdutos.setBackgroundColor(Color.parseColor("#5AAF3F"));
+            binding.buttonCategoriaTodos.setTextColor(Color.WHITE);
             binding.recyclerViewProdutos.setVisibility(View.VISIBLE);
+            binding.buttonCategoriaTodos.setBackgroundResource(R.drawable.button_enabled);
         });
+    }
 
+    private void buttonLegumes(){
         binding.buttonCategoriaLegumes.setOnClickListener(v -> {
+            resetarCategorias();
             listaProduto.clear();
             listaProduto.addAll(Produtos.getLegumes());
             produtoAdapter.notifyDataSetChanged();
-            binding.txtListaProdutos.setText("Legumes");
-            binding.txtListaProdutos.setBackgroundColor(Color.parseColor("#D92727"));
+            binding.buttonCategoriaLegumes.setBackgroundResource(R.drawable.button_enabled);
+            binding.buttonCategoriaLegumes.setTextColor(Color.WHITE);
             binding.recyclerViewProdutos.setVisibility(View.VISIBLE);
         });
+    }
 
+    private void buttonFrutas(){
         binding.buttonCategoriaFrutas.setOnClickListener(v -> {
+            resetarCategorias();
             listaProduto.clear();
             listaProduto.addAll(Produtos.getFrutas());
             produtoAdapter.notifyDataSetChanged();
-            binding.txtListaProdutos.setText("Frutas");
-            binding.txtListaProdutos.setBackgroundColor(Color.parseColor("#3357D9"));
+            binding.buttonCategoriaFrutas.setTextColor(Color.WHITE);
+            binding.buttonCategoriaFrutas.setBackgroundResource(R.drawable.button_enabled);
             binding.recyclerViewProdutos.setVisibility(View.VISIBLE);
         });
+    }
 
+    private void buttonVerduras(){
         binding.buttonCategoriaVerduras.setOnClickListener(v -> {
+            resetarCategorias();
             listaProduto.clear();
             listaProduto.addAll(Produtos.getVerduras());
             produtoAdapter.notifyDataSetChanged();
-            binding.txtListaProdutos.setText("Verduras");
-            binding.txtListaProdutos.setBackgroundColor(Color.parseColor("#FFEB3B"));
+            binding.buttonCategoriaVerduras.setTextColor(Color.WHITE);
+            binding.buttonCategoriaVerduras.setBackgroundResource(R.drawable.button_enabled);
             binding.recyclerViewProdutos.setVisibility(View.VISIBLE);
         });
+    }
+
+    private void configurarCategorias() {
+        buttonTodos();
+        buttonLegumes();
+        buttonFrutas();
+        buttonVerduras();
+    }
+
+    private void resetarCategorias() {
+        // Define a cor padrão para todos os botões
+        int corTextoPadrao = ContextCompat.getColor(requireContext(), R.color.edit_texto);
+
+        binding.buttonCategoriaTodos.setTextColor(corTextoPadrao);
+        binding.buttonCategoriaTodos.setBackgroundResource(R.drawable.button_disabled);
+
+        binding.buttonCategoriaLegumes.setTextColor(corTextoPadrao);
+        binding.buttonCategoriaLegumes.setBackgroundResource(R.drawable.button_disabled);
+
+        binding.buttonCategoriaFrutas.setTextColor(corTextoPadrao);
+        binding.buttonCategoriaFrutas.setBackgroundResource(R.drawable.button_disabled);
+
+        binding.buttonCategoriaVerduras.setTextColor(corTextoPadrao);
+        binding.buttonCategoriaVerduras.setBackgroundResource(R.drawable.button_disabled);
     }
 
     private void configurarPesquisa(){
@@ -102,11 +137,10 @@ public class HomeFragment extends Fragment {
             }
             @Override
             public boolean onQueryTextChange(String novoTexto) {
-                binding.txtListaProdutos.setVisibility(View.GONE);
-                    filtrarProdutos(novoTexto);
-                    return true;
-                }
-            });
+                filtrarProdutos(novoTexto);
+                return true;
+            }
+        });
     }
 
     private void filtrarProdutos(String query){

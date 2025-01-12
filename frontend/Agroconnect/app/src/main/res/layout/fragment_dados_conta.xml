@@ -86,6 +86,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editNomePerfil"
+                android:importantForAutofill="noExcludeDescendants"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nome"
@@ -112,6 +113,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editSobrenomePerfil"
+                android:importantForAutofill="noExcludeDescendants"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Sobrenome"
@@ -138,6 +140,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editEmailPerfil"
+                android:importantForAutofill="noExcludeDescendants"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="E-mail"

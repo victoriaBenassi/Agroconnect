@@ -87,7 +87,7 @@ public class DadosContaFragment extends Fragment {
                 SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
                 String token = sharedPreferences.getString("token", null);
                 if (token != null) {
-                    Usuario usuarioRetornado = usuarioApiService.atualizarUsuario(token, usuarioAtualizado);
+                    Usuario usuarioRetornado = usuarioApiService.atualizarUsuario(getContext(),token, usuarioAtualizado);
 
                     requireActivity().runOnUiThread(() -> {
                         if (usuarioRetornado != null) {
