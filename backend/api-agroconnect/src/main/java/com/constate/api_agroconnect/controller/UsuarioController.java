@@ -1,5 +1,6 @@
 package com.constate.api_agroconnect.controller;
 
+import com.constate.api_agroconnect.dto.ResponseDTO;
 import com.constate.api_agroconnect.model.Usuario;
 import com.constate.api_agroconnect.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +23,12 @@ public class UsuarioController {
     }
 
     @PatchMapping("/atualizar")
-    public ResponseEntity<Usuario> atualizarUsuario(@RequestBody Usuario usuarioAtualizado){
+    public ResponseEntity<ResponseDTO> atualizarUsuario(@RequestBody Usuario usuarioAtualizado){
         Usuario usuarioAutenticado = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Usuario usuarioExistente = usuarioService.usuarioPorId(usuarioAutenticado.getId_usuario());
 
-        Usuario usuarioSalvo = usuarioService.atualizarUsuario(usuarioExistente, usuarioAtualizado);
-        return ResponseEntity.ok(usuarioSalvo);
+        ResponseDTO response = usuarioService.atualizarUsuario(usuarioExistente, usuarioAtualizado);
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/excluir")
