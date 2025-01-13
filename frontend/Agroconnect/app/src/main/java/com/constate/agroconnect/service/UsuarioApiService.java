@@ -3,6 +3,7 @@ package com.constate.agroconnect.service;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.constate.agroconnect.dto.ResponseDTO;
 import com.constate.agroconnect.model.Usuario;
 
 import org.json.JSONObject;
@@ -55,7 +56,7 @@ public class UsuarioApiService {
     }
 
 
-    public Usuario atualizarUsuario(Context context, String token, Usuario usuarioAtualizado) {
+    public ResponseDTO atualizarUsuario(String token, Usuario usuarioAtualizado) {
         try {
             URL url = new URL(BASE_URL + "/atualizar");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -81,6 +82,7 @@ public class UsuarioApiService {
                 writer.flush();
             }
 
+            // Ler a resposta da API
             int response = connection.getResponseCode();
             if (response == HttpURLConnection.HTTP_OK) {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -91,25 +93,13 @@ public class UsuarioApiService {
                 }
                 reader.close();
                 System.out.println("Resposta da API: " + result.toString());
-                JSONObject jsonAtualizado = new JSONObject(result.toString());
 
-                String novoToken = null;
-                if(jsonAtualizado.has("token")){
-                    novoToken = jsonAtualizado.getString("token");
+                // Processar a resposta
+                JSONObject responseJson = new JSONObject(result.toString());
+                int id = responseJson.getInt("id");
+                String tokenAtualizado = responseJson.getString("token");
 
-                    SharedPreferences sharedPreferences = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("token", novoToken);
-                    editor.apply();
-                }
-
-                Usuario usuario = new Usuario();
-                usuario.setNome(jsonAtualizado.getString("nome"));
-                usuario.setSobrenome(jsonAtualizado.getString("sobrenome"));
-                usuario.setEmail(jsonAtualizado.getString("email"));
-                return usuario;
-            } else {
-                System.out.println("Erro ao atualizar informações do usuario " + response);
+                return new ResponseDTO(id, tokenAtualizado);
             }
         }catch (Exception e){
             e.printStackTrace();

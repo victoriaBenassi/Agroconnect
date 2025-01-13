@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.constate.agroconnect.R;
 import com.constate.agroconnect.databinding.FragmentDadosContaBinding;
 import com.constate.agroconnect.databinding.FragmentPerfilBinding;
+import com.constate.agroconnect.dto.ResponseDTO;
 import com.constate.agroconnect.model.Usuario;
 import com.constate.agroconnect.service.UsuarioApiService;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -87,19 +88,34 @@ public class DadosContaFragment extends Fragment {
                 SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
                 String token = sharedPreferences.getString("token", null);
                 if (token != null) {
-                    Usuario usuarioRetornado = usuarioApiService.atualizarUsuario(getContext(),token, usuarioAtualizado);
+                    try {
+                        ResponseDTO response = usuarioApiService.atualizarUsuario(token, usuarioAtualizado);
 
-                    requireActivity().runOnUiThread(() -> {
-                        if (usuarioRetornado != null) {
-                            Toast.makeText(getActivity(), "Usuário atualizado com sucesso.", Toast.LENGTH_SHORT).show();
-                            binding.editNomePerfil.setText(usuarioRetornado.getNome());
-                            binding.editSobrenomePerfil.setText(usuarioRetornado.getSobrenome());
-                            binding.editEmailPerfil.setText(usuarioRetornado.getEmail());
-                        } else {
+                        requireActivity().runOnUiThread(() -> {
+                            if (response != null) {
+                                Toast.makeText(getActivity(), "Usuário atualizado com sucesso.", Toast.LENGTH_SHORT).show();
+
+                                // Atualiza os campos com os dados atualizados
+                                binding.editNomePerfil.setText(usuarioAtualizado.getNome());
+                                binding.editSobrenomePerfil.setText(usuarioAtualizado.getSobrenome());
+                                binding.editEmailPerfil.setText(usuarioAtualizado.getEmail());
+
+                                // armazena o novo token no SharedPreferences
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("token", response.getToken());
+                                editor.apply();
+                            } else {
+                                Toast.makeText(getActivity(), "Erro ao atualizar usuário.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        requireActivity().runOnUiThread(() -> {
                             Toast.makeText(getActivity(), "Erro ao atualizar usuário.", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                } else {
+                        });
+                    }
+                }else{
                     requireActivity().runOnUiThread(() -> {
                         Toast.makeText(getActivity(), "Token inválido. Redirecionando para login.", Toast.LENGTH_SHORT).show();
                         redirecionarParaLogin();
