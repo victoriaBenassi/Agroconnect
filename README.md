@@ -1,39 +1,56 @@
-# Agroconnect
+# AgroConnect
 
-Aplicativo de E-commerce eficiente para venda de produtos como frutas, legumes e verduras, com foco em uma experiência de usuário intuitiva e funcional.
+O AgroConnect é um aplicativo completo de **e-commerce para venda de frutas, legumes e verduras**, com foco em uma experiência de usuário fluida e eficiente. O projeto é dividido entre **frontend Android** e **backend Java Spring Boot**, comunicando-se via API REST.
 
-## Funcionalidades
+---
 
-- **Login e Cadastro**: Sistema de autenticação seguro usando Spring Security e JWT.
-- **Visualização de Produtos**: Produtos organizados por categorias para facilitar a navegação.
-- **Carrinho de Compras**: Adição e remoção de produtos com atualização em tempo real.
-- **Resumo e Confirmação de Pedidos**: Visualização do resumo do pedido antes da finalização.
-- **Perfil do Usuário**: Possibilidade de visualizar e alterar informações pessoais, além de apagar a conta.
-- **Endereços**: Exibição e atualização de endereços cadastrados pelo usuário.
-- **Cálculo de Frete**: Consulta de frete para o pedido do usuário.
+## 🎯 Visão Geral
 
-## Tecnologias Utilizadas
+O sistema foi pensado para facilitar compras em hortifrutis, com uma interface amigável e um backend robusto, incluindo funcionalidades como login, carrinho de compras, pedidos, cálculo de frete e gerenciamento de perfil do usuário.
 
-### Frontend
-- **Linguagem**: Java
-- **Ambiente de Desenvolvimento**: Android Studio
-- **Design**: Material Design
-- **API Externa**: ViaCEP para consulta de endereços
+---
 
-### Backend
-- **Framework**: Java Spring Boot
-- **ORM**: JPA (Java Persistence API)
-- **Segurança**: Spring Security com autenticação via JWT (JSON Web Token)
-- **Banco de Dados**: SQL Server
-- **Arquitetura**: RESTful API para comunicação com o frontend
+## 📱 Aplicativo Android (Frontend)
 
-### Repositórios
+- Desenvolvido em Java no Android Studio
+- Interface com **Material Design**
+- Consome a API REST do backend
+- Armazena e exibe produtos por categoria
+- Permite adicionar ao carrinho, finalizar pedidos e gerenciar conta
 
-O projeto está organizado em dois repositórios:
-1. **Backend**: Contém a API RESTful implementada com Java Spring Boot.
-2. **Frontend**: Contém o aplicativo Android que consome essa API, permitindo aos usuários interagir com a plataforma de e-commerce.
+➡️ [Código do frontend](./frontend/Agroconnect)
 
-## Contato
+---
 
-Desenvolvido por Victoria Benassi – [LinkedIn](https://www.linkedin.com/in/victoria-benassi-a48838271/) 
+## 🔧 API REST em Java (Backend)
 
+- Construída com Spring Boot e JPA
+- Autenticação JWT com Spring Security
+- Integração com SQL Server
+- Consulta de endereços via API ViaCEP
+- Geração de pedidos com cálculo de frete
+
+➡️ [Código do backend](./backend)
+
+---
+
+## 💡 Tecnologias Utilizadas
+
+| Camada     | Tecnologia                       |
+|------------|----------------------------------|
+| Frontend   | Java, Android Studio, ViewBinding|
+| Backend    | Java 17, Spring Boot, JPA, JWT   |
+| Banco      | SQL Server                       |
+| API Externa| ViaCEP                           |
+| Arquitetura| MVC + RESTful                    |
+
+---
+
+## 👩‍💻 Desenvolvedora
+
+Desenvolvido por **Victoria Benassi**  
+💼 [LinkedIn](https://www.linkedin.com/in/victoria-benassi-a48838271/)
+
+---
+
+> Projeto acadêmico e profissional com foco em boas práticas de desenvolvimento backend e integração mobile.
